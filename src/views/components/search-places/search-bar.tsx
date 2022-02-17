@@ -8,11 +8,12 @@ import { Searchbar as SearchBarMaterial } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlaces } from '../../../state/ducks/places-search/actions';
 import { RootState } from '../../../state/ducks/places-search';
+// import { useTailwind } from 'tailwind-rn';
+import tw from 'twrnc';
 
 const SearchBar = ({ onSearch }) => {
     const [value, setValue] = useState('');
     const dispatch = useDispatch();
-    // const maps = useSelector((state: RootState) => state.searchPlaces.places);
 
     const handleChange = (newValue) => {
         setValue(newValue);
@@ -21,9 +22,9 @@ const SearchBar = ({ onSearch }) => {
     };
 
     return (
-        <View style={styles.subcontainer}>
+        <View style={tw`mt-10 items-center`}>
             <SearchBarMaterial
-                style={styles.searchbar}
+                style={tw`w-3/4`}
                 placeholder="Search"
                 onChangeText={handleChange}
                 value={value}
@@ -33,17 +34,3 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
-
-const styles = StyleSheet.create({
-    icon: {
-        width: 40,
-        height: 40
-    },
-    subcontainer: {
-        marginTop: 20,
-        alignItems: 'center'
-    },
-    searchbar: {
-        width: SIZES.width / 1.2
-    }
-});
