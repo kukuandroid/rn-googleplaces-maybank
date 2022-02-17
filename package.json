@@ -10,7 +10,9 @@
         "eject": "expo eject",
         "test": "jest --watchAll",
         "prettier:write": "npx prettier --write **/*.{js,jsx,ts,tsx,json} && npx prettier --write *.{js,jsx,ts,tsx,json}",
-        "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./"
+        "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./",
+        "build:tailwind": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn",
+        "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
     },
     "jest": {
         "preset": "jest-expo"
@@ -44,6 +46,8 @@
         "redux-logger": "^3.0.6",
         "redux-observable": "^2.0.0",
         "rxjs": "^7.4.0",
+        "tailwind-rn": "^4.2.0",
+        "twrnc": "^3.0.2",
         "typesafe-actions": "^5.1.0"
     },
     "devDependencies": {
@@ -54,6 +58,7 @@
         "@types/redux-logger": "^3.0.9",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",
+        "concurrently": "^7.0.0",
         "eslint": "^8.2.0",
         "eslint-config-airbnb-typescript": "^16.0.0",
         "eslint-config-prettier": "^8.3.0",
@@ -63,8 +68,10 @@
         "eslint-plugin-react": "^7.27.0",
         "eslint-plugin-react-hooks": "^4.3.0",
         "jest-expo": "~43.0.0",
+        "postcss": "^8.4.6",
         "prettier": "^2.4.1",
         "redux-devtools-extension": "^2.13.9",
+        "tailwindcss": "^3.0.23",
         "typescript": "~4.3.5"
     },
     "private": true
