@@ -1,14 +1,25 @@
 import * as React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import {  View, TouchableOpacity, Text } from 'react-native';
+import tw from 'twrnc';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const SearchResult = ({ item }, onAddressSelected) => {
     return (
-        <TouchableOpacity onPress={() => onAddressSelected(item.description)}>
-            <View style={styles.container}>
-                <Text>{item.description}</Text>
-                <View style={styles.content}>
-                    <View style={styles.contentHeader}>
-                        <Text style={styles.name}>
+        <TouchableOpacity
+            style={tw`flex-row items-center `}
+            onPress={() => onAddressSelected(item.description)}
+        >
+            <View style={tw`flex-column justify-center items-center`}>
+                <FontAwesome5
+                    style={tw`text-lg text-red-400 ml-4`}
+                    name="map-marker-alt"
+                />
+            </View>
+            <View style={tw`pl-10 pr-14 pv-5 flex-column`}>
+                <Text style={tw`text-base font-bold`}>{item.description}</Text>
+                <View style={tw`mt-1 flex`}>
+                    <View style={tw`flex-row justify-between`}>
+                        <Text style={tw`text-sm`}>
                             {item.types.map((x) => x)}
                         </Text>
                     </View>
@@ -19,47 +30,3 @@ const SearchResult = ({ item }, onAddressSelected) => {
 };
 
 export default SearchResult;
-
-const styles = StyleSheet.create({
-    container: {
-        paddingLeft: 19,
-        paddingRight: 16,
-        paddingVertical: 12
-    },
-    content: {
-        marginTop: 10,
-        flex: 1
-    },
-    contentHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 6
-    },
-    separator: {
-        height: 1,
-        backgroundColor: '#CCCCCC'
-    },
-    image: {
-        width: 45,
-        height: 45,
-        borderRadius: 20,
-        marginLeft: 20
-    },
-    time: {
-        fontSize: 11,
-        color: '#808080'
-    },
-    name: {
-        fontSize: 16,
-        fontWeight: 'bold'
-    }
-});
-
-{
-    /* <List.Item
-title={item.description}
-onPress={onAddressSelected}
-description={item.types.map((x) => x)}
-left={(props) => <List.Icon {...props} icon="google-maps" />}
-/> */
-}
