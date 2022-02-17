@@ -7,7 +7,7 @@ This is React Native expo app, including google maps modules with the integratio
 Redux, RxJs, Redux-Observable etc, TailwindCSS
 
 # Configuration
-config/index.ts
+src/config/index.ts
 
 # Run the project
 1) `npm i -g expo-cli `
