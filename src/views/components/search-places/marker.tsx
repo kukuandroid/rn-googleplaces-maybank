@@ -2,6 +2,7 @@ import React from 'react';
 import { Marker } from 'react-native-maps';
 import { Image, StyleSheet } from 'react-native';
 import { MARKER_IMAGE } from '../../../constants/Maps';
+import tw from 'twrnc';
 
 const MapMarker = ({ coordsChanged, coords, baseCoords }) => {
     return (
@@ -18,7 +19,7 @@ const MapMarker = ({ coordsChanged, coords, baseCoords }) => {
                 title="I'm Here !!"
             >
                 <Image
-                    style={styles.icon}
+                    style={tw`w-10 h-10`}
                     source={{
                         uri: MARKER_IMAGE
                     }}
@@ -29,10 +30,3 @@ const MapMarker = ({ coordsChanged, coords, baseCoords }) => {
 };
 
 export default MapMarker;
-
-const styles = StyleSheet.create({
-    icon: {
-        width: 40,
-        height: 40
-    }
-});
