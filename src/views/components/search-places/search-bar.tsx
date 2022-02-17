@@ -5,10 +5,8 @@ import { View, StyleSheet } from 'react-native';
 import { SIZES } from '../../../constants/Layout';
 // import Colors from '../../../constants/Colors';
 import { Searchbar as SearchBarMaterial } from 'react-native-paper';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchPlaces } from '../../../state/ducks/places-search/actions';
-import { RootState } from '../../../state/ducks/places-search';
-// import { useTailwind } from 'tailwind-rn';
 import tw from 'twrnc';
 
 const SearchBar = ({ onSearch }) => {
