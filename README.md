@@ -1,6 +1,6 @@
-# Maybank-ReactNative-Assessment
+# Maybank-ReactNative
 
-An Assessment by maybank that using react and google maps autocomplete api. 
+React and google maps autocomplete api. 
 This is React Native expo app, including google maps modules with the integration of rest api.
 
 # Package included
