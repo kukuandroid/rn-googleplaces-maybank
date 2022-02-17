@@ -20,9 +20,9 @@ const SearchBar = ({ onSearch }) => {
     };
 
     return (
-        <View style={tw`mt-10 items-center`}>
+        <View style={tw`items-center absolute mt-15 left-0 right-0`}>
             <SearchBarMaterial
-                style={tw`w-3/4`}
+                style={tw`w-3/4 z-2`}
                 placeholder="Search"
                 onChangeText={handleChange}
                 value={value}
